@@ -56,7 +56,7 @@ public class SpawnArea : MonoBehaviour
             float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
             float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
-            GameObject sObject = Instantiate(spawnObjects[objectIndex]);
+            GameObject sObject = Instantiate(spawnObjects[objectIndex], transform);
             sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
             instanciatedObjects.Add(sObject);
         }
@@ -71,7 +71,7 @@ public class SpawnArea : MonoBehaviour
                     float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                     float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
-                    GameObject sObject = Instantiate(spawnObjects[i]);
+                    GameObject sObject = Instantiate(spawnObjects[i], transform);
                     sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
                     instanciatedObjects.Add(sObject);
                 }
@@ -84,7 +84,7 @@ public class SpawnArea : MonoBehaviour
                 float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                 float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
-                GameObject sObject = Instantiate(spawnObjects[i]);
+                GameObject sObject = Instantiate(spawnObjects[i], transform);
                 sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
                 instanciatedObjects.Add(sObject);
             }
@@ -96,7 +96,7 @@ public class SpawnArea : MonoBehaviour
                 float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                 float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
-                GameObject sObject = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Count - 1)]);
+                GameObject sObject = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Count - 1)], transform);
                 sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
                 instanciatedObjects.Add(sObject);
             }
