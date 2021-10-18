@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class RoomManager : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class RoomManager : MonoBehaviour
 
     public List<Room> roomPrefabs;
     public List<Room> rooms;
+
+    public UnityEvent onRoomDiscover;
 
 
     public void Awake()
@@ -66,6 +68,8 @@ public class RoomManager : MonoBehaviour
         {
             List<int> indexes = InstantiateIndexList(roomPrefabs.Count);
 
+            if (TryConnectToOtherRooms(connector)) continue;
+
             bool ok = false;
 
             while(indexes.Count > 0)
@@ -106,6 +110,42 @@ public class RoomManager : MonoBehaviour
         }
 
         room.neighbourRoomsGenerated = true;
+    }
+
+
+    public bool TryConnectToOtherRooms(RoomConnector connector)
+    {
+        foreach(Room room in rooms)
+        {
+            if (connector.parentRoom != room)
+            {
+                foreach (RoomConnector _connector in room.roomConnectors)
+                {
+                    if (VectorApproximately(_connector.connectionPoint.transform.position, connector.connectionPoint.transform.position) && !_connector.occupied)
+                    {
+                        _connector.pairedConnector = connector;
+                        _connector.occupied = true;
+                        connector.pairedConnector = _connector;
+                        connector.occupied = true;
+
+                        connector.parentRoom.OpenDoors();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    public bool VectorApproximately(Vector3 first, Vector3 second)
+    {
+        if (Mathf.Approximately(first.x, second.x) &&
+            Mathf.Approximately(first.y, second.y) &&
+            Mathf.Approximately(first.z, second.z)) return true;
+        return false;
     }
 
 

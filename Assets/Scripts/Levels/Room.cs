@@ -19,7 +19,7 @@ public class Room : MonoBehaviour
     public Transform UpLeftCorner;
     public Transform DownRightCorner;
 
-    public bool roomGenerated;
+    public bool roomDiscovered;
     public bool neighbourRoomsGenerated;
 
     public bool doorState = true;
@@ -49,6 +49,8 @@ public class Room : MonoBehaviour
         {
             RoomManager.instance.GenerateNeighbourRooms(this);
         }
+
+        if (!roomDiscovered) { roomDiscovered = true; RoomManager.instance.onRoomDiscover?.Invoke(); }
 
         List<Room> roomToEnable = GetNeighbourRooms();
         roomToEnable.Add(this);
