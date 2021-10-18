@@ -22,6 +22,9 @@ public class Room : MonoBehaviour
     public bool roomGenerated;
     public bool neighbourRoomsGenerated;
 
+    public bool doorState = true;
+
+
     public void Generate()
     {
         gameObject.SetActive(true);
@@ -56,6 +59,8 @@ public class Room : MonoBehaviour
         }
 
         RoomManager.instance.DisableAllRoomsExcept(roomToEnable);
+
+        RoomManager.instance.currentRoom = this;
     }
 
 
@@ -64,8 +69,10 @@ public class Room : MonoBehaviour
         foreach(RoomConnector roomConnector in roomConnectors)
         {
             roomConnector.OpenDoor();
-            roomConnector.pairedConnector.OpenDoor();
+            roomConnector.pairedConnector?.OpenDoor();
         }
+
+        doorState = true;
     }
 
     public void CloseDoors()
@@ -73,8 +80,10 @@ public class Room : MonoBehaviour
         foreach (RoomConnector roomConnector in roomConnectors)
         {
             roomConnector.CloseDoor();
-            roomConnector.pairedConnector.CloseDoor();
+            roomConnector.pairedConnector?.CloseDoor();
         }
+
+        doorState = false;
     }
 
 

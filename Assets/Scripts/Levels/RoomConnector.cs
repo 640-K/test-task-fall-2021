@@ -29,6 +29,6 @@ public class RoomConnector : MonoBehaviour
     public void DisableConnector()
     {
         gameObject.SetActive(false);
-        //onDisabledConnectorObject.SetActive(true);
+        onDisabledConnectorObject.SetActive(true);
     }
 }

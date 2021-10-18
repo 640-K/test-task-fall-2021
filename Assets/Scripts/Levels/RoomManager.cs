@@ -7,6 +7,8 @@ public class RoomManager : MonoBehaviour
 {
     public static RoomManager instance;
 
+    public Room currentRoom;
+
     public List<Room> roomPrefabs;
     public List<Room> rooms;
 
@@ -28,6 +30,33 @@ public class RoomManager : MonoBehaviour
         GenerateNeighbourRooms(instanced);
 
         instanced.neighbourRoomsGenerated = true;
+
+        currentRoom = instanced;
+    }
+
+
+    public void Update()
+    {
+        if (Input.GetKeyDown("t"))
+        {
+            if (currentRoom.doorState) { currentRoom.CloseDoors(); }
+            else
+            {
+                currentRoom.OpenDoors();
+            }
+        }
+    }
+
+
+    public void CloseDoorsInCurrentRoom()
+    {
+        currentRoom.CloseDoors();
+    }
+
+
+    public void OpenDoorsInCurrentRoom()
+    {
+        currentRoom.OpenDoors();
     }
 
 
@@ -67,12 +96,13 @@ public class RoomManager : MonoBehaviour
                     connector.occupied = true;
                     instanced.roomConnectors[secondRoomIndex].pairedConnector = connector;
                     instanced.roomConnectors[secondRoomIndex].occupied = true;
+                    instanced.OpenDoors();
 
                     break;
                 }
             }
 
-            if (!ok) connector.DisableConnector();
+            if (!ok && !connector.occupied) connector.DisableConnector();
         }
 
         room.neighbourRoomsGenerated = true;

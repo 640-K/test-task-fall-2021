@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public GameObject open;
-    public GameObject close;
+    public SpriteRenderer doorSprite;
     public BoxCollider2D doorCollider;
+
+    private bool _state;
 
     public void SetState(bool state)
     {
-        if(state) { open.SetActive(true); }
-        else { open.SetActive(false); }
+        _state = state;
+
+        int value = state == true ? 0 : 1;
+        LeanTween.alpha(doorSprite.gameObject, value, 0.5f).setOnComplete(ChangeColliderState);
+
         doorCollider.enabled = state;
+    }
+
+
+    public void ChangeColliderState()
+    {
+        if (_state) doorCollider.enabled = false;
+        else doorCollider.enabled = true;
     }
 }
