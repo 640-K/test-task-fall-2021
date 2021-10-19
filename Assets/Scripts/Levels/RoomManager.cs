@@ -14,6 +14,8 @@ public class RoomManager : MonoBehaviour
 
     public UnityEvent onRoomDiscover;
 
+    public int startRoomIndex;
+
 
     public void Awake()
     {
@@ -23,7 +25,7 @@ public class RoomManager : MonoBehaviour
 
     public void Start()
     {
-        Room instanced = Instantiate(roomPrefabs[Random.Range(0, roomPrefabs.Count - 1)], transform);
+        Room instanced = Instantiate(roomPrefabs[startRoomIndex], transform);
 
         instanced.transform.position = new Vector3(0f, 0f, 0f);
         instanced.Generate();
@@ -184,7 +186,7 @@ public class RoomManager : MonoBehaviour
 
         foreach (Room secondRoom in rooms)
         {
-            if (CheckIfOverlap(room, secondRoom)) return false;
+            if (CheckIfOverlap(room, secondRoom)) return true;
         }
 
         return false;
@@ -241,7 +243,7 @@ public class RoomManager : MonoBehaviour
 
     public int RandomIndex(List<int> indexes)
     {
-        return indexes[Random.Range(0, indexes.Count - 1)];
+        return indexes[Random.Range(0, indexes.Count)];
     }
 
 

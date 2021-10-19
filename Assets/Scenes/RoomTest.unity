@@ -338,7 +338,10 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   roomPrefabs:
   - {fileID: 4789123278134591556, guid: 0005c66fbd8a7f24692aecfd12d6fd15, type: 3}
+  - {fileID: 4789123278134591556, guid: 8fff40b929df88e428c011470fddd43b, type: 3}
+  - {fileID: 4789123278134591556, guid: f0ec72996e5960642b15407cb815ab2c, type: 3}
   rooms: []
   onRoomDiscover:
     m_PersistentCalls:
       m_Calls: []
+  startRoomIndex: 0
