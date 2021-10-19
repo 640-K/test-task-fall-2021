@@ -335,6 +335,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b6b3ae848cc8e47a9fd9481cbfaf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomPrefabs:
-  - {fileID: 4789123278134591556, guid: 0005c66fbd8a7f24692aecfd12d6fd15, type: 3}
-  rooms: []

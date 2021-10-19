@@ -5,12 +5,11 @@ using System;
 
 namespace Entities
 {
+
     public abstract class Entity : MonoBehaviour
     {
         [Header("Features")]
         public uint health;
-        public uint armor;
-
 
 
         [Header("Movement")]
@@ -30,21 +29,27 @@ namespace Entities
         [Header("Components")]
         public Rigidbody2D physicsBody;
         public Collider2D collisionBounds;
+        public Animator animator;
 
 
 
-        public uint currentHealth { get; private set; }
-        public uint currentArmor { get; private set; }
-        public Vector2 motionDirection { get; private set; }
+        public uint currentHealth { get; protected set; }
+        public Vector2 motionDirection { get; protected set; }
         public bool dead { get => currentHealth == 0; }
+        public State state { get; protected set; } = State.Idle;
+
+
+
+        public enum State { Idle, Move, Attack, Dead }
 
 
 
         public virtual void Start()
         {
             currentHealth = health;
-            currentArmor = armor;
             motionDirection = Vector2.zero;
+
+            animator.Play("idle");
         }
 
         public virtual void OnValidate()
@@ -68,30 +73,42 @@ namespace Entities
             }
             else
                 physicsBody.AddForce(-physicsBody.velocity * physicsBody.mass * deccelerationRate, ForceMode2D.Impulse);
-
         }
             
 
 
         public virtual void Move(Vector2 direction)
         {
+            if (motionDirection.magnitude == 0)
+            {
+                if (direction.magnitude != 0)
+                {
+                    animator.Play("move");
+                    OnStartMoving();
+                }
+            }
+            else if (direction.magnitude == 0)
+            {
+                animator.Play("idle");
+                OnStopMoving();
+            }
+
+
             direction.Normalize();
             motionDirection = direction;
         }
-
-
 
         public void Hurt(uint damage)
         {
             if (currentHealth == 0) return;
 
-            if (currentArmor > 0)
-                currentArmor -= Math.Min(damage, currentArmor);
-            else
-                currentHealth -= Math.Min(damage, currentHealth);
+            currentHealth -= Math.Min(damage, currentHealth);
 
             if (currentHealth == 0)
+            {
+                animator.Play("dead");
                 OnDie();
+            }
         }
 
         public void Heal(uint factor)
@@ -99,13 +116,18 @@ namespace Entities
             currentHealth = Math.Min(currentHealth + factor, health);
         }
 
-        public void RepairArmor(uint factor)
+        public virtual void Attack(Entity victim, uint damage)
         {
-            currentArmor = Math.Min(currentArmor + factor, armor);
+            victim.Hurt(damage);
         }
 
 
+
+        protected abstract void OnStartMoving();
+        
         protected abstract void OnMove();
+
+        protected abstract void OnStopMoving();
 
         protected abstract void OnDie();
     }
