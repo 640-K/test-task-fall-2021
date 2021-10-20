@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public SpriteRenderer doorSprite;
+    public GameObject spikesUp;
+    public GameObject tempSpikes;
+    public GameObject spikesDown;
     public BoxCollider2D doorCollider;
 
     private bool _state;
@@ -13,16 +15,41 @@ public class Door : MonoBehaviour
     {
         _state = state;
 
-        int value = state == true ? 0 : 1;
-        LeanTween.alpha(doorSprite.gameObject, value, 0.5f).setOnComplete(ChangeColliderState);
+        LeanTween.value(gameObject, 0f, 0f, 0.25f).setOnComplete(Temp);
 
         doorCollider.enabled = state;
+    }
+
+    public void Temp()
+    {
+        if (_state)
+        {
+            tempSpikes.gameObject.SetActive(true);
+            spikesUp.gameObject.SetActive(false);
+            LeanTween.value(gameObject, 0f, 0f, 0.25f).setOnComplete(ChangeColliderState);
+        }
+        else
+        {
+            tempSpikes.gameObject.SetActive(true);
+            spikesDown.gameObject.SetActive(false);
+            LeanTween.value(gameObject, 0f, 0f, 0.25f).setOnComplete(ChangeColliderState);
+        }
     }
 
 
     public void ChangeColliderState()
     {
-        if (_state) doorCollider.enabled = false;
-        else doorCollider.enabled = true;
+        if (_state)
+        {
+            doorCollider.enabled = false;
+            tempSpikes.gameObject.SetActive(false);
+            spikesDown.gameObject.SetActive(true);
+        }
+        else
+        {
+            tempSpikes.gameObject.SetActive(false);
+            spikesUp.gameObject.SetActive(true);
+            doorCollider.enabled = true;
+        }
     }
 }
