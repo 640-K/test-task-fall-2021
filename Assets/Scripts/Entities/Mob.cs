@@ -74,6 +74,14 @@ namespace Entities{
         {
         }
 
+        protected override void OnStartMoving()
+        {
+        }
+
+        protected override void OnStopMoving()
+        {
+        }
+
         private void OnDrawGizmos()
         {
             if (alwaysFollow|| !showGizmos)

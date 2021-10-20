@@ -29,5 +29,13 @@ namespace Entities
         protected override void OnMove()
         {
         }
+
+        protected override void OnStartMoving()
+        {
+        }
+
+        protected override void OnStopMoving()
+        {
+        }
     }
 }
