@@ -340,6 +340,7 @@ MonoBehaviour:
   - {fileID: 4789123278134591556, guid: 0005c66fbd8a7f24692aecfd12d6fd15, type: 3}
   - {fileID: 4789123278134591556, guid: 8fff40b929df88e428c011470fddd43b, type: 3}
   - {fileID: 4789123278134591556, guid: f0ec72996e5960642b15407cb815ab2c, type: 3}
+  - {fileID: 4789123278134591556, guid: 55616a0735d0c31438c7de776bf42144, type: 3}
   rooms: []
   onRoomDiscover:
     m_PersistentCalls:
