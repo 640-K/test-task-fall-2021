@@ -82,6 +82,14 @@ namespace Entities{
         {
         }
 
+        protected override void OnHurt()
+        {
+        }
+
+        protected override void OnHeal()
+        {
+        }
+
         private void OnDrawGizmos()
         {
             if (alwaysFollow|| !showGizmos)

@@ -109,11 +109,13 @@ namespace Entities
                 animator.Play("dead");
                 OnDie();
             }
+            OnHurt();
         }
 
         public void Heal(uint factor)
         {
             currentHealth = Math.Min(currentHealth + factor, health);
+            OnHeal();
         }
 
         public virtual void Attack(Entity victim, uint damage)
@@ -130,5 +132,9 @@ namespace Entities
         protected abstract void OnStopMoving();
 
         protected abstract void OnDie();
+
+        protected abstract void OnHurt();
+
+        protected abstract void OnHeal();
     }
 }

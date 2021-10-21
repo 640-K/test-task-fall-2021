@@ -6,6 +6,9 @@ namespace Entities
 {
     public class TestEntity : Entity
     {
+
+        public HealthBar healthBar;
+
         private void Update()
         {
             Vector2 motion = Vector2.zero;
@@ -18,6 +21,13 @@ namespace Entities
                 motion -= Vector2.up;
             if (Input.GetKey(KeyCode.D))
                 motion += Vector2.right;
+
+            // DEBUG
+            if (Input.GetKeyUp(KeyCode.M))
+                Hurt(10);
+            if (Input.GetKeyUp(KeyCode.N))
+                Heal(10);
+            // END DEBUG
 
             Move(motion);
         }
@@ -36,6 +46,16 @@ namespace Entities
 
         protected override void OnStopMoving()
         {
+        }
+
+        protected override void OnHurt()
+        {
+            healthBar.SetSliderValueGradually(currentHealth);
+        }
+
+        protected override void OnHeal()
+        {
+            healthBar.SetSliderValueGradually(currentHealth);
         }
     }
 }

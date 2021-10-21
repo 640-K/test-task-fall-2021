@@ -451,3 +451,13 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Mac OS
+.DS_Store
+
+# vscode
+.vscode
+
+# Vim
+*.swp
+
