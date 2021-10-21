@@ -1,12 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Entities
 {
     public class Player : Entity
     {
+        private const uint MaxScore = 100;
+
         public HealthBar healthBar;
+        public Text scoreText;
+
+        public uint score = 0;
+
+        void AddScorePoints(uint points)
+        {
+            if (score + points <= MaxScore)
+            {
+                score += points;
+                scoreText.text = "Score: " + score;
+            }
+            else
+            {
+                // WIN
+            }
+        }
 
         // Update is called once per frame
         void Update()
@@ -32,6 +51,8 @@ namespace Entities
                 Hurt(10);
             if (Input.GetKeyUp(KeyCode.N))
                 Heal(10);
+            if (Input.GetKeyUp(KeyCode.F))
+                AddScorePoints(10);
             // END DEBUG
 
             Move(motion);
