@@ -9,5 +9,7 @@ public abstract class Weapon : MonoBehaviour
     public uint damage;
     public Vector2 aimDirection;
 
+    public bool isAttack;
+
     public abstract void Use();
 }
