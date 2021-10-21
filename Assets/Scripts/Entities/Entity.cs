@@ -142,6 +142,7 @@ namespace Entities
 
         public void Attack()
         {
+            Debug.Log(5);
             animator.SetTrigger("attack");
         }
     }

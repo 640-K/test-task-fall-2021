@@ -21,9 +21,28 @@ namespace Entities{
 
         public bool alwaysFollowAfterSee;
 
+        public override void Start()
+        {
+            base.Start();
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
+
         void Update()
         {
             Vector2 motion = Vector2.zero;
+            if (Vector2.Distance(player.transform.position, transform.position) < 1)
+            {
+                Move(motion);
+                Debug.Log(weapon.isAttack);
+                if(weapon.isAttack == false) {
+                    Debug.Log(56);
+                    
+                }
+                Attack();
+                return;
+            }
+
             PathNode playerNode = ground.pathfinding.grid.getNodeFromWorldPosition(player.transform.position);
             PathNode startNode = ground.pathfinding.grid.getNodeFromWorldPosition(transform.position);
             if (playerNode == null || startNode == null) {

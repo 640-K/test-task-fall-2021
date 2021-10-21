@@ -30,6 +30,7 @@ public class Sword : Weapon
 
     public override void Use()
     {
+        Debug.Log(45);
         foreach(var entity in entitiesInRange)
         {
             entity.Hurt(damage);
