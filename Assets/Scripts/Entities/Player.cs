@@ -49,15 +49,6 @@ namespace Entities
             if (Input.GetKey(KeyCode.D))
                 motion += Vector2.right;
 
-            // DEBUG
-            if (Input.GetKeyUp(KeyCode.M))
-                Hurt(10);
-            if (Input.GetKeyUp(KeyCode.N))
-                Heal(10);
-            if (Input.GetKeyUp(KeyCode.F))
-                AddScorePoints(10);
-            // END DEBUG
-
             Move(motion);
         }
 
