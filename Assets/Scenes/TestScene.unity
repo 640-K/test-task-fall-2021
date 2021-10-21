@@ -372,6 +372,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &585425474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4019189696633185182, guid: c979827de1286154894651328bce6374, type: 3}
+  m_PrefabInstance: {fileID: 1101239241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &585425477
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585425474}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1 &691610838
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +694,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
   m_PrefabInstance: {fileID: 1101239241}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 585425474}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afed35dc14fc3e34bb956beb3f25e8d0, type: 3}
@@ -921,7 +937,6 @@ MonoBehaviour:
   - {fileID: 4789123278134591556, guid: 0005c66fbd8a7f24692aecfd12d6fd15, type: 3}
   - {fileID: 4789123278134591556, guid: f0ec72996e5960642b15407cb815ab2c, type: 3}
   - {fileID: 4789123278134591556, guid: 8fff40b929df88e428c011470fddd43b, type: 3}
-  - {fileID: 4789123278134591556, guid: 55616a0735d0c31438c7de776bf42144, type: 3}
   rooms: []
   onRoomDiscover:
     m_PersistentCalls:
