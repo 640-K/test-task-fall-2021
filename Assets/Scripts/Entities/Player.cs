@@ -28,12 +28,6 @@ namespace Entities
             Move(motion);
         }
 
-
-        public override void Attack(Entity victim, uint damage)
-        {
-            base.Attack(victim, damage);
-        }
-
         protected override void OnDie()
         {
         }

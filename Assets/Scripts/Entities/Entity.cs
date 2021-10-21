@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 
 namespace Entities
@@ -30,7 +31,9 @@ namespace Entities
         public GameObject body;
         public Rigidbody2D physicsBody;
         public Collider2D collisionBounds;
+        public Collider2D hitArea;
         public Animator animator;
+        public Weapon weapon;
 
 
 
@@ -73,19 +76,20 @@ namespace Entities
 
         public virtual void Move(Vector2 direction)
         {
-            if (dead) return;
+            direction.Normalize();
+            if (dead || direction == motionDirection) return;
 
             if (motionDirection.magnitude == 0)
             {
                 if (direction.magnitude != 0)
                 {
-                    animator.SetTrigger("move");
+                    animator.SetInteger("state", 1);
                     OnStartMoving();
                 }
             }
             else if (direction.magnitude == 0)
             {
-                animator.SetTrigger("idle");
+                animator.SetInteger("state", 0);
                 OnStopMoving();
             }
 
@@ -95,8 +99,6 @@ namespace Entities
                 body.transform.localScale = new Vector3(-1, 1, 1);
 
 
-
-            direction.Normalize();
             motionDirection = direction;
         }
 
@@ -108,7 +110,7 @@ namespace Entities
 
             if (dead)
             {
-                animator.SetTrigger("die");
+                animator.SetInteger("state", 2);
                 OnDie();
             }
             OnHurt();
@@ -123,11 +125,6 @@ namespace Entities
         }
 
         public void Kill() => Hurt(health);
-        
-        public virtual void Attack(Entity victim, uint damage)
-        {
-            victim.Hurt(damage);
-        }
 
 
 
@@ -142,5 +139,11 @@ namespace Entities
         protected abstract void OnHurt();
 
         protected abstract void OnHeal();
+
+        public void Attack()
+        {
+            animator.SetTrigger("attack");
+            weapon.Use();
+        }
     }
 }
