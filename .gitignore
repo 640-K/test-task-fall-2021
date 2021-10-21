@@ -455,8 +455,9 @@ FodyWeavers.xsd
 # Mac OS
 .DS_Store
 
-# vscode
+# vs/vscode
 .vscode
+*.vsconfig
 
 # Vim
 *.swp

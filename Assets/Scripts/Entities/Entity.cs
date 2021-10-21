@@ -27,6 +27,7 @@ namespace Entities
 
 
         [Header("Components")]
+        public GameObject body;
         public Rigidbody2D physicsBody;
         public Collider2D collisionBounds;
         public Animator animator;
@@ -36,20 +37,12 @@ namespace Entities
         public uint currentHealth { get; protected set; }
         public Vector2 motionDirection { get; protected set; }
         public bool dead { get => currentHealth == 0; }
-        public State state { get; protected set; } = State.Idle;
-
-
-
-        public enum State { Idle, Move, Attack, Dead }
-
 
 
         public virtual void Start()
         {
             currentHealth = health;
             motionDirection = Vector2.zero;
-
-            animator.Play("idle");
         }
 
         public virtual void OnValidate()
@@ -62,10 +55,12 @@ namespace Entities
 
         protected virtual void FixedUpdate()
         {
+            if (dead) return;
+
             if (motionDirection.magnitude > 0)
             {
                 Vector2 perpMotionDirection = Vector2.Perpendicular(motionDirection);
-                physicsBody.AddForce(-perpMotionDirection * Vector2.Dot(physicsBody.velocity, perpMotionDirection) * physicsBody.mass * maneuverability, ForceMode2D.Impulse);
+                physicsBody.AddForce(-perpMotionDirection * physicsBody.mass * Vector2.Dot(physicsBody.velocity, perpMotionDirection) * maneuverability, ForceMode2D.Impulse);
 
                 physicsBody.AddForce(motionDirection * physicsBody.mass * (maxSpeed - Vector2.Dot(physicsBody.velocity, motionDirection)) * accelerationRate, ForceMode2D.Impulse);
 
@@ -73,25 +68,32 @@ namespace Entities
             }
             else
                 physicsBody.AddForce(-physicsBody.velocity * physicsBody.mass * deccelerationRate, ForceMode2D.Impulse);
-        }
-            
+        }            
 
 
         public virtual void Move(Vector2 direction)
         {
+            if (dead) return;
+
             if (motionDirection.magnitude == 0)
             {
                 if (direction.magnitude != 0)
                 {
-                    animator.Play("move");
+                    animator.SetTrigger("move");
                     OnStartMoving();
                 }
             }
             else if (direction.magnitude == 0)
             {
-                animator.Play("idle");
+                animator.SetTrigger("idle");
                 OnStopMoving();
             }
+
+            if (direction.x > 0)
+                body.transform.localScale = Vector3.one;
+            if(direction.x < 0)
+                body.transform.localScale = new Vector3(-1, 1, 1);
+
 
 
             direction.Normalize();
@@ -100,13 +102,13 @@ namespace Entities
 
         public void Hurt(uint damage)
         {
-            if (currentHealth == 0) return;
+            if (dead) return;
 
             currentHealth -= Math.Min(damage, currentHealth);
 
-            if (currentHealth == 0)
+            if (dead)
             {
-                animator.Play("dead");
+                animator.SetTrigger("die");
                 OnDie();
             }
             OnHurt();
@@ -114,10 +116,14 @@ namespace Entities
 
         public void Heal(uint factor)
         {
+            if (dead) return;
+
             currentHealth = Math.Min(currentHealth + factor, health);
             OnHeal();
         }
 
+        public void Kill() => Hurt(health);
+        
         public virtual void Attack(Entity victim, uint damage)
         {
             victim.Hurt(damage);
