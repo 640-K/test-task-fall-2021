@@ -821,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5357654720729045680}
   - component: {fileID: 2179805816435278470}
+  - component: {fileID: 1121248238270923276}
   m_Layer: 3
   m_Name: LowerWalls
   m_TagString: Untagged
@@ -855,6 +856,17 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!210 &1121248238270923276
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360864699352556892}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
 --- !u!1 &1422982010424448655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937295009455638824}
   - component: {fileID: 858410123708122388}
+  - component: {fileID: 7867596724489324930}
   m_Layer: 3
   m_Name: LowerWall
   m_TagString: Untagged
@@ -4391,6 +4404,17 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!210 &7867596724489324930
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824452113433673266}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
 --- !u!1 &4059563256684395701
 GameObject:
   m_ObjectHideFlags: 0
@@ -7602,6 +7626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5335760695855393925}
   - component: {fileID: 8176955130302178163}
+  - component: {fileID: 8650037511384502776}
   m_Layer: 3
   m_Name: UpperWall
   m_TagString: Untagged
@@ -7636,6 +7661,17 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!210 &8650037511384502776
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6215707474578616880}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &6230440614699990396
 GameObject:
   m_ObjectHideFlags: 0
@@ -10448,6 +10484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8757422683802739832}
   - component: {fileID: 8886730767779314090}
+  - component: {fileID: 4051883732064720848}
   m_Layer: 3
   m_Name: UpperWalls
   m_TagString: Untagged
@@ -10482,6 +10519,17 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!210 &4051883732064720848
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499596689548843622}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &6665884296262144265
 GameObject:
   m_ObjectHideFlags: 0
