@@ -5333,7 +5333,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4789123277370231817}
   - component: {fileID: 4789123277370231816}
-  - component: {fileID: 922156602137668737}
   m_Layer: 0
   m_Name: RoomConnector 2
   m_TagString: Untagged
@@ -5377,17 +5376,6 @@ MonoBehaviour:
   onDisabledConnectorObject: {fileID: 1118470932821542563}
   connectionPoint: {fileID: 4789123277677059872}
   pairedConnector: {fileID: 0}
---- !u!210 &922156602137668737
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789123277370231823}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &4789123277470956422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,7 +5386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4789123277470956416}
   - component: {fileID: 4789123277470956423}
-  - component: {fileID: 4020335369956794090}
   m_Layer: 0
   m_Name: RoomConnector 1
   m_TagString: Untagged
@@ -5442,17 +5429,6 @@ MonoBehaviour:
   onDisabledConnectorObject: {fileID: 3649704333460229018}
   connectionPoint: {fileID: 4789123277758428532}
   pairedConnector: {fileID: 0}
---- !u!210 &4020335369956794090
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789123277470956422}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &4789123277587367971
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,7 +5579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789123278134591578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.5, y: 22.960499, z: 0}
+  m_LocalPosition: {x: 22.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789123277262294242}
