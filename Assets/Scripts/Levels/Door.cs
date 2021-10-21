@@ -20,6 +20,16 @@ public class Door : MonoBehaviour
         doorCollider.enabled = state;
     }
 
+
+    public void ForceOpenDoor()
+    {
+        _state = true;
+        doorCollider.enabled = false;
+        tempSpikes.gameObject.SetActive(false);
+        spikesDown.gameObject.SetActive(true);
+        spikesUp.gameObject.SetActive(false);
+    }
+
     public void Temp()
     {
         if (_state)

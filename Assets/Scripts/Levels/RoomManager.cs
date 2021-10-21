@@ -102,7 +102,7 @@ public class RoomManager : MonoBehaviour
                     connector.occupied = true;
                     instanced.roomConnectors[secondRoomIndex].pairedConnector = connector;
                     instanced.roomConnectors[secondRoomIndex].occupied = true;
-                    instanced.OpenDoors();
+                    instanced.ForceOpenDoors();
 
                     break;
                 }

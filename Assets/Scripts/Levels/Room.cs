@@ -80,6 +80,18 @@ public class Room : MonoBehaviour
         doorState = true;
     }
 
+
+    public void ForceOpenDoors()
+    {
+        foreach (RoomConnector roomConnector in roomConnectors)
+        {
+            roomConnector.ForceOpenDoor();
+            roomConnector.pairedConnector?.ForceOpenDoor();
+        }
+
+        doorState = true;
+    }
+
     public void CloseDoors()
     {
         foreach (RoomConnector roomConnector in roomConnectors)

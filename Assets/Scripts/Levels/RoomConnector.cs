@@ -21,6 +21,11 @@ public class RoomConnector : MonoBehaviour
         door.SetState(true);
     }
 
+    public void ForceOpenDoor()
+    {
+        door.ForceOpenDoor();
+    }
+
     public void CloseDoor()
     {
         door.SetState(false);

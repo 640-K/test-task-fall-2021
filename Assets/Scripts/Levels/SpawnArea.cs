@@ -61,11 +61,14 @@ public class SpawnArea : MonoBehaviour
 
             Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
             PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
-            Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+            if (node != null)
+            {
+                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
 
-            GameObject sObject = Instantiate(spawnObjects[objectIndex], transform);
-            sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
-            instanciatedObjects.Add(sObject);
+                GameObject sObject = Instantiate(spawnObjects[objectIndex], transform);
+                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
+                instanciatedObjects.Add(sObject);
+            }
         }
         else if(type == SpawnAreaTypes.allRandom)
         {
@@ -80,11 +83,14 @@ public class SpawnArea : MonoBehaviour
 
                     Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
                     PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
-                    Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+                    if (node != null)
+                    {
+                        Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
 
-                    GameObject sObject = Instantiate(spawnObjects[i], transform);
-                    sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
-                    instanciatedObjects.Add(sObject);
+                        GameObject sObject = Instantiate(spawnObjects[i], transform);
+                        sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
+                        instanciatedObjects.Add(sObject);
+                    }
                 }
             }
         }
@@ -97,11 +103,14 @@ public class SpawnArea : MonoBehaviour
 
                 Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
                 PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
-                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+                if (node != null)
+                {
+                    Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
 
-                GameObject sObject = Instantiate(spawnObjects[i], transform);
-                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
-                instanciatedObjects.Add(sObject);
+                    GameObject sObject = Instantiate(spawnObjects[i], transform);
+                    sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
+                    instanciatedObjects.Add(sObject);
+                }
             }
         }
         else if (type == SpawnAreaTypes.multipleObjectsByRandom)
@@ -113,11 +122,14 @@ public class SpawnArea : MonoBehaviour
 
                 Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
                 PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
-                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+                if (node != null)
+                {
+                    Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
 
-                GameObject sObject = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Count - 1)], transform);
-                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
-                instanciatedObjects.Add(sObject);
+                    GameObject sObject = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Count - 1)], transform);
+                    sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
+                    instanciatedObjects.Add(sObject);
+                }
             }
         }
         else if (type == SpawnAreaTypes.oneObjectMultipleTimes)
@@ -129,11 +141,14 @@ public class SpawnArea : MonoBehaviour
 
                 Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
                 PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
-                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+                if (node != null)
+                {
+                    Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
 
-                GameObject sObject = Instantiate(spawnObjects[multipleObjectIndex], transform);
-                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
-                instanciatedObjects.Add(sObject);
+                    GameObject sObject = Instantiate(spawnObjects[multipleObjectIndex], transform);
+                    sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
+                    instanciatedObjects.Add(sObject);
+                }
             }
         }
     }
