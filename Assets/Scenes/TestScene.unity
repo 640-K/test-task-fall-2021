@@ -169,7 +169,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 1.6766561, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -657,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Size.y
-      value: 0.15
+      value: 0.10054069
       objectReference: {fileID: 0}
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Enabled
@@ -665,11 +665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0175
+      value: -0.017500002
       objectReference: {fileID: 0}
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Offset.y
-      value: -0.02
+      value: -0.10745857
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c979827de1286154894651328bce6374, type: 3}
@@ -921,6 +921,7 @@ MonoBehaviour:
   - {fileID: 4789123278134591556, guid: 0005c66fbd8a7f24692aecfd12d6fd15, type: 3}
   - {fileID: 4789123278134591556, guid: f0ec72996e5960642b15407cb815ab2c, type: 3}
   - {fileID: 4789123278134591556, guid: 8fff40b929df88e428c011470fddd43b, type: 3}
+  - {fileID: 4789123278134591556, guid: 55616a0735d0c31438c7de776bf42144, type: 3}
   rooms: []
   onRoomDiscover:
     m_PersistentCalls:
