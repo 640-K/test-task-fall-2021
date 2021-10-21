@@ -6,6 +6,8 @@ namespace Entities
 {
     public class Player : Entity
     {
+        public HealthBar healthBar;
+
         // Update is called once per frame
         void Update()
         {
@@ -24,6 +26,13 @@ namespace Entities
                 motion -= Vector2.up;
             if (Input.GetKey(KeyCode.D))
                 motion += Vector2.right;
+
+            // DEBUG
+            if (Input.GetKeyUp(KeyCode.M))
+                Hurt(10);
+            if (Input.GetKeyUp(KeyCode.N))
+                Heal(10);
+            // END DEBUG
 
             Move(motion);
         }
@@ -46,10 +55,12 @@ namespace Entities
 
         protected override void OnHurt()
         {
+            healthBar.SetSliderValueGradually(currentHealth);
         }
 
         protected override void OnHeal()
         {
+            healthBar.SetSliderValueGradually(currentHealth);
         }
     }
 }
