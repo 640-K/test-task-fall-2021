@@ -54,7 +54,6 @@ MonoBehaviour:
   body: {fileID: 7923109882993388618}
   physicsBody: {fileID: 5473803745872103780}
   collisionBounds: {fileID: 7850686783828055244}
-  hitArea: {fileID: 0}
   animator: {fileID: 5862276541625356460}
   weapon: {fileID: 6107570716284846023}
 --- !u!50 &5473803745872103780
@@ -168,6 +167,7 @@ GameObject:
   - component: {fileID: 988179479315100521}
   - component: {fileID: 5862276541625356460}
   - component: {fileID: 4764033170967390231}
+  - component: {fileID: 4085754796032693311}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -261,3 +261,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4085754796032693311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923109882993388618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5e54c62596fd74eb4ee8e7c1b5a9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventToInvoke:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6107570716284846023}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

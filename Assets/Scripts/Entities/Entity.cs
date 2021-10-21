@@ -31,7 +31,6 @@ namespace Entities
         public GameObject body;
         public Rigidbody2D physicsBody;
         public Collider2D collisionBounds;
-        public Collider2D hitArea;
         public Animator animator;
         public Weapon weapon;
 
@@ -71,7 +70,9 @@ namespace Entities
             }
             else
                 physicsBody.AddForce(-physicsBody.velocity * physicsBody.mass * deccelerationRate, ForceMode2D.Impulse);
-        }            
+        }
+
+
 
 
         public virtual void Move(Vector2 direction)
@@ -125,7 +126,8 @@ namespace Entities
         }
 
         public void Kill() => Hurt(health);
-
+        
+        public virtual void Attack() => animator.SetTrigger("attack");
 
 
         protected abstract void OnStartMoving();
@@ -140,10 +142,6 @@ namespace Entities
 
         protected abstract void OnHeal();
 
-        public void Attack()
-        {
-            animator.SetTrigger("attack");
-            weapon.Use();
-        }
+
     }
 }

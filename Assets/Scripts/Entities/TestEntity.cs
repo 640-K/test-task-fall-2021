@@ -9,7 +9,7 @@ namespace Entities
 
         public HealthBar healthBar;
 
-        private void Update()
+        void Update()
         {
             Vector2 motion = Vector2.zero;
 
