@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 7828105108689212650}
   - component: {fileID: 3014380870053084570}
   - component: {fileID: 5225509394259504657}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 5357654720729045680}
   - component: {fileID: 2179805816435278470}
   - component: {fileID: 909651551971566362}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LowerWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,6 +854,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 2443207552139648235, guid: 768ff85b156d69d41b361d1c837be21d, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 1
   from: 0
   to: 0
@@ -1136,7 +1137,7 @@ GameObject:
   - component: {fileID: 7123040363960762316}
   - component: {fileID: 7956803623383733214}
   - component: {fileID: 4451786873724648696}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,7 +1854,7 @@ GameObject:
   - component: {fileID: 5924528306379918829}
   - component: {fileID: 7975330700161517563}
   - component: {fileID: 4715708381566929319}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LowerWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1910,7 @@ GameObject:
   - component: {fileID: 8019774231947397638}
   - component: {fileID: 2273426469440722543}
   - component: {fileID: 2141038768486369440}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2296,7 +2297,7 @@ GameObject:
   - component: {fileID: 526783456127018853}
   - component: {fileID: 7235704871157946002}
   - component: {fileID: 814056241341464085}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3169,7 +3170,7 @@ GameObject:
   - component: {fileID: 4661053547635674853}
   - component: {fileID: 8548576054899500623}
   - component: {fileID: 1493289980150259207}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4306,7 +4307,7 @@ GameObject:
   - component: {fileID: 4163434053119783622}
   - component: {fileID: 4457755507398220003}
   - component: {fileID: 625994129836705673}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5368,7 @@ GameObject:
   - component: {fileID: 2937295009455638824}
   - component: {fileID: 858410123708122388}
   - component: {fileID: 4880753050997563474}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LowerWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6698,6 +6699,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 4634938034318021393, guid: 449419b5a39718a4683fa2e668204d83, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 2
   from: 0
   to: 0
@@ -7074,7 +7076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789123278134591578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: -85.641495, z: 0}
+  m_LocalPosition: {x: 22.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789123277262294242}
@@ -7091,6 +7093,7 @@ Transform:
   - {fileID: 1145684515638939048}
   - {fileID: 8348542185414888183}
   - {fileID: 1059146343990549609}
+  - {fileID: 914385582031827853}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7120,6 +7123,7 @@ MonoBehaviour:
   - {fileID: 6948753376353833934}
   - {fileID: 7163977362336771940}
   roomObjects: []
+  ground: {fileID: 1226533072920378086}
   UpLeftCorner: {fileID: 4789123277262294242}
   DownRightCorner: {fileID: 4789123277587367980}
   roomDiscovered: 0
@@ -7393,7 +7397,7 @@ GameObject:
   - component: {fileID: 8396789628100432714}
   - component: {fileID: 4283233527052743716}
   - component: {fileID: 5318792125717424433}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8085,6 +8089,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 2443207552139648235, guid: 768ff85b156d69d41b361d1c837be21d, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 1
   from: 0
   to: 0
@@ -8171,6 +8176,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 2443207552139648235, guid: 768ff85b156d69d41b361d1c837be21d, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 1
   from: 0
   to: 0
@@ -8518,6 +8524,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 2443207552139648235, guid: 768ff85b156d69d41b361d1c837be21d, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 1
   from: 0
   to: 0
@@ -9181,7 +9188,7 @@ GameObject:
   - component: {fileID: 5335760695855393925}
   - component: {fileID: 8176955130302178163}
   - component: {fileID: 6782982844283264717}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: UpperWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9237,7 +9244,7 @@ GameObject:
   - component: {fileID: 1109003036850941098}
   - component: {fileID: 218120508140963443}
   - component: {fileID: 6757659240727843177}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14022,7 +14029,7 @@ GameObject:
   - component: {fileID: 8757422683802739832}
   - component: {fileID: 8886730767779314090}
   - component: {fileID: 814040846544664377}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: UpperWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14067,6 +14074,86 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6659200547704209936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914385582031827853}
+  - component: {fileID: 1226533072920378086}
+  m_Layer: 0
+  m_Name: AI Ground
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &914385582031827853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659200547704209936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: -11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 768634075920011239}
+  m_Father: {fileID: 4789123278134591557}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1226533072920378086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659200547704209936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12dd2ce802bd4115b2e524c522bc1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1
+  showGizmos: 1
+  end: {fileID: 768634075920011239}
+  walkableMask:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!1 &6661108144430161928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768634075920011239}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768634075920011239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661108144430161928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 914385582031827853}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6665884296262144265
 GameObject:
   m_ObjectHideFlags: 0
@@ -14078,7 +14165,7 @@ GameObject:
   - component: {fileID: 2854817406492942217}
   - component: {fileID: 1665248893997755384}
   - component: {fileID: 24853584920537825}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14404,6 +14491,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 1376794334338570053, guid: a3fd0ddc27e15004eb64bece72618e10, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 2
   from: 0
   to: 0
@@ -14465,7 +14553,7 @@ GameObject:
   - component: {fileID: 5105117109565566453}
   - component: {fileID: 6861328043098086443}
   - component: {fileID: 782513899804203025}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: UpperWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14595,7 +14683,7 @@ GameObject:
   - component: {fileID: 6090385304133592601}
   - component: {fileID: 7012709586860656090}
   - component: {fileID: 1711898912828348436}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14690,6 +14778,7 @@ MonoBehaviour:
   spawnObjects:
   - {fileID: 1033308748499067502, guid: 166e1358141d5c2488e8389096cbe383, type: 3}
   instanciatedObjects: []
+  parentRoom: {fileID: 0}
   type: 2
   from: 0
   to: 0

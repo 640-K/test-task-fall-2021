@@ -1,3 +1,4 @@
+using AI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -19,6 +20,8 @@ public class SpawnArea : MonoBehaviour
 
     [Space]
     [Space]
+
+    public Room parentRoom;
 
     public SpawnAreaTypes type;
 
@@ -56,8 +59,12 @@ public class SpawnArea : MonoBehaviour
             float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
             float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
+            Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
+            PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
+            Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+
             GameObject sObject = Instantiate(spawnObjects[objectIndex], transform);
-            sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
+            sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
             instanciatedObjects.Add(sObject);
         }
         else if(type == SpawnAreaTypes.allRandom)
@@ -71,8 +78,12 @@ public class SpawnArea : MonoBehaviour
                     float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                     float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
+                    Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
+                    PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
+                    Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+
                     GameObject sObject = Instantiate(spawnObjects[i], transform);
-                    sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
+                    sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
                     instanciatedObjects.Add(sObject);
                 }
             }
@@ -84,8 +95,12 @@ public class SpawnArea : MonoBehaviour
                 float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                 float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
+                Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
+                PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
+                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+
                 GameObject sObject = Instantiate(spawnObjects[i], transform);
-                sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
+                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
                 instanciatedObjects.Add(sObject);
             }
         }
@@ -96,8 +111,12 @@ public class SpawnArea : MonoBehaviour
                 float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                 float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
+                Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
+                PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
+                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+
                 GameObject sObject = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Count - 1)], transform);
-                sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
+                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
                 instanciatedObjects.Add(sObject);
             }
         }
@@ -108,8 +127,12 @@ public class SpawnArea : MonoBehaviour
                 float xSpawnPos = Random.Range(Mathf.Min(A.position.x, B.position.x), Mathf.Max(A.position.x, B.position.x));
                 float ySpawnPos = Random.Range(Mathf.Min(A.position.y, B.position.y), Mathf.Max(A.position.y, B.position.y));
 
+                Vector3 vector = new Vector3(xSpawnPos, ySpawnPos);
+                PathNode node = parentRoom.ground.pathfinding.grid.getNodeFromWorldPosition(vector);
+                Vector3 worldPos = parentRoom.ground.pathfinding.grid.GetWorldPositionGizmos(node.x, node.y);
+
                 GameObject sObject = Instantiate(spawnObjects[multipleObjectIndex], transform);
-                sObject.transform.position = new Vector2(xSpawnPos, ySpawnPos);
+                sObject.transform.position = new Vector2(worldPos.x, worldPos.y);
                 instanciatedObjects.Add(sObject);
             }
         }

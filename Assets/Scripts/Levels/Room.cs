@@ -16,6 +16,8 @@ public class Room : MonoBehaviour
 
     public List<GameObject> roomObjects;
 
+    public AIGround ground;
+
     public Transform UpLeftCorner;
     public Transform DownRightCorner;
 
@@ -31,6 +33,7 @@ public class Room : MonoBehaviour
 
         foreach(SpawnArea area in spawnAreas)
         {
+            area.parentRoom = this;
             area.Spawn();
             roomObjects.AddRange(area.instanciatedObjects);
         }
