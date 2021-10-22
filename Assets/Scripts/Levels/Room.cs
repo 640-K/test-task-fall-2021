@@ -42,7 +42,8 @@ public class Room : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        OnRoomEnter();
+        if(collision.gameObject.tag == "Player")
+            OnRoomEnter();
     }
 
 
@@ -52,8 +53,20 @@ public class Room : MonoBehaviour
         {
             RoomManager.instance.GenerateNeighbourRooms(this);
         }
+        
 
-        if (!roomDiscovered) { roomDiscovered = true; RoomManager.instance.onRoomDiscover?.Invoke(); }
+        if (!roomDiscovered) {
+
+
+            roomDiscovered = true;
+            RoomManager.instance.onRoomDiscover?.Invoke();
+
+            if (GetComponentInParent<RoomManager>().rooms[0] != this)
+            {
+                GetComponent<Spawner>().Spawn();
+                CloseDoors();
+            }
+        }
 
         List<Room> roomToEnable = GetNeighbourRooms();
         roomToEnable.Add(this);
@@ -66,6 +79,8 @@ public class Room : MonoBehaviour
         RoomManager.instance.DisableAllRoomsExcept(roomToEnable);
 
         RoomManager.instance.currentRoom = this;
+
+     
     }
 
 

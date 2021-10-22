@@ -34,6 +34,11 @@ namespace AI
             return new Vector3(x, y) * size + startPosition;
         }
 
+        public Vector3 GetLocalPosition(int x, int y)
+        {
+            return new Vector3(x, y) * size + new Vector3(size / 2, size / 2, 0);
+        }
+
         public Vector3 GetWorldPositionGizmos(int x, int y)
         {
             return GetWorldPosition(x, y) + new Vector3(size / 2, size / 2, 0);
