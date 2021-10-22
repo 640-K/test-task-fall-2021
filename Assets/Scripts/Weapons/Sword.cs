@@ -34,6 +34,7 @@ public class Sword : Weapon
         {
             if(entity.tag != owner.tag)
             {
+
                 entity.Hurt(damage);
                 Debug.Log("Attack");
             }

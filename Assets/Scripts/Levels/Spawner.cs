@@ -12,10 +12,12 @@ public class Spawner : MonoBehaviour
     public List<GameObject> prefabs;
     public AIGround ground;
 
+    private int numerOfMobs;
     public void Spawn()
     {
+        numerOfMobs = Random.Range(min, max);
         AI.Grid grid = ground.pathfinding.grid;
-        for (int i = 0; i < Random.Range(min, max); i++)
+        for (int i = 0; i < numerOfMobs; i++)
         {
             Vector2 position = grid.GetLocalPosition(Random.Range(0, grid.width), Random.Range(0, grid.height));
             GameObject gameObject = prefabs[Random.Range(0, prefabs.Count)];
@@ -36,6 +38,11 @@ public class Spawner : MonoBehaviour
 
 public void Die()
     {
-        Debug.Log(3);
+        numerOfMobs--;
+        if(numerOfMobs == 0)
+        {
+            GetComponent<Room>().OpenDoors();
+            Debug.Log("GOOD");
+        }
     }
 }

@@ -53,8 +53,20 @@ public class Room : MonoBehaviour
         {
             RoomManager.instance.GenerateNeighbourRooms(this);
         }
+        
 
-        if (!roomDiscovered) { roomDiscovered = true; RoomManager.instance.onRoomDiscover?.Invoke(); }
+        if (!roomDiscovered) {
+
+
+            roomDiscovered = true;
+            RoomManager.instance.onRoomDiscover?.Invoke();
+
+            if (GetComponentInParent<RoomManager>().rooms[0] != this)
+            {
+                GetComponent<Spawner>().Spawn();
+                CloseDoors();
+            }
+        }
 
         List<Room> roomToEnable = GetNeighbourRooms();
         roomToEnable.Add(this);
@@ -68,7 +80,7 @@ public class Room : MonoBehaviour
 
         RoomManager.instance.currentRoom = this;
 
-        GetComponent<Spawner>().Spawn();
+     
     }
 
 
