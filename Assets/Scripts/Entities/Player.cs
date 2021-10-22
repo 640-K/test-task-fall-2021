@@ -85,6 +85,14 @@ namespace Entities
 
         protected override void OnDie()
         {
+            StartCoroutine(WaitBeforeExit());
+            IEnumerator WaitBeforeExit()
+            {
+                yield return new WaitForSeconds(3);
+
+                transition.targetScene = "LossScene";
+                transition.Transition();
+            }
         }
 
         protected override void OnMove()
