@@ -66,6 +66,10 @@ public class Room : MonoBehaviour
                 GetComponent<Spawner>().Spawn();
                 CloseDoors();
             }
+            else
+            {
+                Destroy(ground.gameObject);
+            }
         }
 
         List<Room> roomToEnable = GetNeighbourRooms();

@@ -105,9 +105,9 @@ namespace Entities
             motionDirection = direction;
         }
 
-        public void Hurt(uint damage)
+        public int Hurt(uint damage)
         {
-            if (dead) return;
+            if (dead) return 0;
 
             currentHealth -= Math.Min(damage, currentHealth);
 
@@ -115,8 +115,10 @@ namespace Entities
             {
                 animator.SetInteger("state", 2);
                 OnDie();
+                return 1;
             }
             OnHurt();
+            return 0;
         }
 
         public void Heal(uint factor)

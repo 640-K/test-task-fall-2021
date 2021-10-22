@@ -14,7 +14,7 @@ namespace Entities
 
         public uint score = 0;
 
-        void AddScorePoints(uint points)
+        public void AddScorePoints(uint points)
         {
             if (score + points <= MaxScore)
             {

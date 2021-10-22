@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2390930572823423567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 8.5, z: 0}
+  m_LocalPosition: {x: 13.5, y: 6.5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6279499674062166765}
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9dd6531b4654d99a51edbc99020e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  maxSpeed: 3.3712063
+  health: 27
+  maxSpeed: 2.7483487
   accelerationRate: 0.6
   deccelerationRate: 0.59
   maneuverability: 0.59
@@ -113,7 +113,7 @@ MonoBehaviour:
   followRadius: 0
   alwaysFollowAfterSee: 0
   spawner: {fileID: 0}
-  waitTime: 0.8953625
+  waitTime: 0.24163395
 --- !u!1 &4755005367285902595
 GameObject:
   m_ObjectHideFlags: 0

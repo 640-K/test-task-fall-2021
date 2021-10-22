@@ -42,7 +42,6 @@ public void Die()
         if(numerOfMobs == 0)
         {
             GetComponent<Room>().OpenDoors();
-            Debug.Log("GOOD");
         }
     }
 }
