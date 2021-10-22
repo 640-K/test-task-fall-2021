@@ -39,7 +39,7 @@ namespace Entities{
                 }
                 else
                     if(alwaysFollowAfterSee)
-                    alwaysFollow = true;
+                        alwaysFollow = true;
 
             List<PathNode> path = ground.pathfinding.FindPath(startNode.x, startNode.y, playerNode.x, playerNode.y);
 

@@ -57,7 +57,7 @@ namespace Entities
 
         protected virtual void FixedUpdate()
         {
-            if (dead) return;
+            if (dead) motionDirection = Vector2.zero;
 
             if (motionDirection.magnitude > 0)
             {
@@ -105,16 +105,21 @@ namespace Entities
 
         public void Hurt(uint damage)
         {
-            if (dead) return;
+            if (dead && damage == 0) return;
 
             currentHealth -= Math.Min(damage, currentHealth);
+
 
             if (dead)
             {
                 animator.SetInteger("state", 2);
                 OnDie();
             }
-            OnHurt();
+            else
+            {
+                animator.SetTrigger("hurt");
+                OnHurt();
+            }
         }
 
         public void Heal(uint factor)
