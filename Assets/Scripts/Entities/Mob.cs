@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AI;
+using UnityEngine.Rendering;
 
 namespace Entities{
     public class Mob : Entity
@@ -139,6 +140,7 @@ namespace Entities{
 
                 key.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 10;
             }
+            GetComponent<SortingGroup>().sortingOrder = 0;
         }
 
         protected override void OnMove()
@@ -169,10 +171,5 @@ namespace Entities{
             Gizmos.DrawWireSphere(transform.position, followRadius);
         }
 
-        IEnumerator AfterDie()
-        {
-            yield return new WaitForSeconds(5);
-            Destroy(this);
-        }
     }
 }

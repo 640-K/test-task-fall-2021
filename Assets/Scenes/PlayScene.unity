@@ -1305,13 +1305,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
-      propertyPath: score
-      value: 99
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
-      propertyPath: uiCanvas
-      value: 
-      objectReference: {fileID: 149621885}
     - target: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: healthBar
       value: 

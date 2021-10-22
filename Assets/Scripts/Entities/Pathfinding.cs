@@ -75,27 +75,32 @@ namespace AI
         private List<PathNode> GetNeibourtList(PathNode currentNode)
         {
             List<PathNode> neibourtList = new List<PathNode>();
+            try
+            {
+                if (currentNode.x -1 >= 0)
+                {
 
-            if(currentNode.x -1 >= 0)
+                    if (grid.GetPathNode(currentNode.x - 1, currentNode.y).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y));
+                    if (currentNode.y -1 >= 0 && grid.GetPathNode(currentNode.x - 1, currentNode.y-1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y-1));
+                    if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x - 1, currentNode.y+1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y + 1));
+
+                }
+                if (currentNode.x + 1 <= grid.width)
+                {
+
+                    if (grid.GetPathNode(currentNode.x + 1, currentNode.y).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y));
+                    if (currentNode.y - 1 >= 0 && grid.GetPathNode(currentNode.x + 1, currentNode.y - 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y - 1));
+                    if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x + 1, currentNode.y + 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y + 1));
+
+                }
+
+                if (currentNode.y - 1 >= 0 && grid.GetPathNode(currentNode.x, currentNode.y - 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x, currentNode.y - 1));
+                if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x, currentNode.y + 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x, currentNode.y + 1));
+                }
+            catch (System.Exception)
             {
 
-                if (grid.GetPathNode(currentNode.x - 1, currentNode.y).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y));
-                if (currentNode.y -1 >= 0 && grid.GetPathNode(currentNode.x - 1, currentNode.y-1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y-1));
-                if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x - 1, currentNode.y+1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x - 1, currentNode.y + 1));
-
             }
-            if (currentNode.x + 1 <= grid.width)
-            {
-
-                if (grid.GetPathNode(currentNode.x + 1, currentNode.y).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y));
-                if (currentNode.y - 1 >= 0 && grid.GetPathNode(currentNode.x + 1, currentNode.y - 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y - 1));
-                if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x + 1, currentNode.y + 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x + 1, currentNode.y + 1));
-
-            }
-
-            if (currentNode.y - 1 >= 0 && grid.GetPathNode(currentNode.x, currentNode.y - 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x, currentNode.y - 1));
-            if (currentNode.y + 1 <= grid.height && grid.GetPathNode(currentNode.x, currentNode.y + 1).isWalkable) neibourtList.Add(grid.GetPathNode(currentNode.x, currentNode.y + 1));
-
 
             return neibourtList;
         }

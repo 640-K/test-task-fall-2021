@@ -35,8 +35,8 @@ public class Sword : Weapon
             if(entity.tag != owner.tag)
             {
 
-                entity.Hurt(damage);
-                Debug.Log("Attack");
+                if (entity.Hurt(damage) == 1 && entity.gameObject.tag != "Player")
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().AddScorePoints(1);
             }
             
         }
