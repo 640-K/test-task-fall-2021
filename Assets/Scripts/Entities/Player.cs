@@ -13,6 +13,7 @@ namespace Entities
         public Text scoreText;
         public GameObject uiCanvas;
         public GameObject pauseCanvas;
+        public SceneTransition transition;
 
         public uint score = 0;
 

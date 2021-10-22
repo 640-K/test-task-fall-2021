@@ -10,6 +10,10 @@ namespace Entities{
 
         private GameObject player;
 
+        public GameObject keyPrefab;
+        public GameObject bigHealPrefab;
+        public GameObject smallHealPrefab;
+
         public bool showPath;
 
         public bool alwaysFollow;
@@ -35,10 +39,6 @@ namespace Entities{
             foreach (GameObject mob in GameObject.FindGameObjectsWithTag("Mob"))
                 if(mob != this)
                     Physics2D.IgnoreCollision(mob.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-
-            
-
-
         }
 
         void Update()
@@ -118,6 +118,27 @@ namespace Entities{
 
             spawner.Die();
             StartCoroutine(AfterDie());
+
+            float chance = Random.Range(0f, 100f);
+
+            if (chance < 5)
+            {
+                var key = Instantiate(keyPrefab);
+                key.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 10;
+            }
+
+            chance = Random.Range(0f, 100f);
+
+            if (chance < 33)
+            {
+                GameObject key;
+                if (chance < 15)
+                    key = Instantiate(bigHealPrefab);
+                else
+                    key = Instantiate(smallHealPrefab);
+
+                key.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 10;
+            }
         }
 
         protected override void OnMove()
