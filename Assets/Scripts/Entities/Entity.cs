@@ -105,7 +105,7 @@ namespace Entities
 
         public int Hurt(uint damage)
         {
-            if (dead && damage == 0) return;
+            if (dead && damage == 0) return 0;
 
             currentHealth -= Math.Min(damage, currentHealth);
 
@@ -120,6 +120,7 @@ namespace Entities
             {
                 animator.SetTrigger("hurt");
                 OnHurt();
+                return 0;
             }
         }
 

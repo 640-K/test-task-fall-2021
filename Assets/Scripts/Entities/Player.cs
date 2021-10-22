@@ -26,7 +26,12 @@ namespace Entities
             }
             else
             {
-                // WIN
+                StartCoroutine(WaitBeforeExit());
+                IEnumerator WaitBeforeExit()
+                {
+                    yield return new WaitForSeconds(1f);
+                    transition.Transition();
+                }
             }
         }
 

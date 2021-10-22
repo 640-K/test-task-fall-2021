@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2390930572823423564, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: health
-      value: 27
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2390930572823423564, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: player
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2390930572823423564, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: maxSpeed
-      value: 2.6809695
+      value: 3.9132802
       objectReference: {fileID: 0}
     - target: {fileID: 2390930572823423564, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: waitTime
-      value: 0.380422
+      value: 0.85907996
       objectReference: {fileID: 0}
     - target: {fileID: 2390930572823423567, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: m_Name
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6270252392968314214, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6270252392968314214, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
       propertyPath: m_LocalPosition.y

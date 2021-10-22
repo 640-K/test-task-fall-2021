@@ -118,7 +118,6 @@ namespace Entities{
         {
 
             spawner.Die();
-            StartCoroutine(AfterDie());
 
             float chance = Random.Range(0f, 100f);
 
