@@ -856,9 +856,9 @@ PolygonCollider2D:
       - {x: -6.9926043, y: 3.9907103}
       - {x: -10.488383, y: 3.9637687}
       - {x: -10.494131, y: 2.1418645}
-      - {x: -6.264909, y: 2.1371348}
-      - {x: -6.2633705, y: 7.14984}
-      - {x: -1.2533798, y: 7.162853}
+      - {x: -6.2813425, y: 2.1371348}
+      - {x: -6.2717285, y: 7.174914}
+      - {x: -1.2533798, y: 7.171105}
       - {x: -1.2758727, y: 11.994277}
       - {x: -2.0100827, y: 11.982179}
       - {x: -1.984786, y: 8.97137}
@@ -890,9 +890,9 @@ PolygonCollider2D:
     - - {x: 2.9625225, y: 8.97303}
       - {x: 2.953596, y: 12.006325}
       - {x: 2.2678719, y: 12.003768}
-      - {x: 2.2777052, y: 7.1158075}
-      - {x: 7.2450523, y: 7.170665}
-      - {x: 7.2730546, y: 2.137397}
+      - {x: 2.2854548, y: 7.1855526}
+      - {x: 7.2992973, y: 7.1784134}
+      - {x: 7.29225, y: 2.1469967}
       - {x: 11.984207, y: 2.200307}
       - {x: 11.996765, y: 4.004659}
       - {x: 7.984123, y: 4.006631}
@@ -4988,7 +4988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4576228687435774001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13, y: 13, z: 0}
+  m_LocalPosition: {x: 13.15, y: 13.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8530911100148029352}
@@ -5859,6 +5859,7 @@ GameObject:
   - component: {fileID: 4789123278134591557}
   - component: {fileID: 4789123278134591556}
   - component: {fileID: 4789123278134591579}
+  - component: {fileID: 8168906434596987011}
   m_Layer: 0
   m_Name: Square Room
   m_TagString: Untagged
@@ -5874,7 +5875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789123278134591578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95, y: 73.7615, z: 0}
+  m_LocalPosition: {x: 22.5, y: -22.960499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2978469275157543244}
@@ -5954,6 +5955,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.602081, y: 13.501381}
   m_EdgeRadius: 0
+--- !u!114 &8168906434596987011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789123278134591578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7ee1a192e949f784df35098da3515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 5
+  max: 10
+  prefabs:
+  - {fileID: 2390930572823423567, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
+  - {fileID: 6859171912101402935, guid: c681266f9585e40e18a8bc2bf19fc716, type: 3}
+  - {fileID: 3059243031397358422, guid: 271dfe8652c014a4f906bfe37f475d5b, type: 3}
+  ground: {fileID: 4605054311194103677}
 --- !u!1 &4789123278336408579
 GameObject:
   m_ObjectHideFlags: 0
@@ -6033,7 +6053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4968490837144902285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: -6, z: 0}
+  m_LocalPosition: {x: -6.24, y: -6.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3537650589388686286}
@@ -6052,7 +6072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12dd2ce802bd4115b2e524c522bc1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1
+  size: 0.5
   showGizmos: 1
   end: {fileID: 3537650589388686286}
   walkableMask:

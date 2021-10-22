@@ -57,7 +57,9 @@ namespace Entities
 
         protected virtual void FixedUpdate()
         {
-            if (dead) return;
+            if (dead)
+                motionDirection = Vector2.zero;
+            
 
             if (motionDirection.magnitude > 0)
             {

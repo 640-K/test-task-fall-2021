@@ -7061,6 +7061,7 @@ GameObject:
   - component: {fileID: 2157868298861485599}
   - component: {fileID: 3481416557843051442}
   - component: {fileID: 1357082342934110091}
+  - component: {fileID: 6559724774711558304}
   m_Layer: 0
   m_Name: Long Rectangular Room
   m_TagString: Untagged
@@ -7076,7 +7077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789123278134591578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -72.5, y: 43.801, z: 0}
+  m_LocalPosition: {x: -60, y: 85.6415, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789123277262294242}
@@ -7302,6 +7303,25 @@ PolygonCollider2D:
       - {x: 2.233364, y: -6.720877}
       - {x: -1.7555199, y: -6.6891327}
       - {x: -1.7762232, y: 5.279706}
+--- !u!114 &6559724774711558304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789123278134591578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b7ee1a192e949f784df35098da3515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 10
+  max: 25
+  prefabs:
+  - {fileID: 2390930572823423567, guid: 734567729ea384b48b3c8d98702a07b2, type: 3}
+  - {fileID: 6859171912101402935, guid: c681266f9585e40e18a8bc2bf19fc716, type: 3}
+  - {fileID: 3059243031397358422, guid: 271dfe8652c014a4f906bfe37f475d5b, type: 3}
+  ground: {fileID: 1226533072920378086}
 --- !u!1 &4789123278336408579
 GameObject:
   m_ObjectHideFlags: 0

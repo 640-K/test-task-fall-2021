@@ -737,8 +737,20 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 882888154}
+    - target: {fileID: 3632045752723831903, guid: c979827de1286154894651328bce6374, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1447536366}
     - target: {fileID: 4019189696633185182, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019189696633185182, guid: c979827de1286154894651328bce6374, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4750493145501963447, guid: c979827de1286154894651328bce6374, type: 3}
@@ -793,6 +805,10 @@ PrefabInstance:
       propertyPath: readyToAttack
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6411764317717481438, guid: c979827de1286154894651328bce6374, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Size.x
       value: 0.1254188
@@ -812,6 +828,10 @@ PrefabInstance:
     - target: {fileID: 7850686783828055244, guid: c979827de1286154894651328bce6374, type: 3}
       propertyPath: m_Offset.y
       value: -0.09940933
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923109882993388618, guid: c979827de1286154894651328bce6374, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c979827de1286154894651328bce6374, type: 3}

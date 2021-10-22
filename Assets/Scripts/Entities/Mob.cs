@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using AI;
 
 namespace Entities{
@@ -9,7 +8,7 @@ namespace Entities{
     {
         public AIGround ground;
 
-        public GameObject player;
+        private GameObject player;
 
         public bool showPath;
 
@@ -21,9 +20,47 @@ namespace Entities{
 
         public bool alwaysFollowAfterSee;
 
-        void Update()
+        private bool isAttack = false;
+
+        public Spawner spawner;
+
+        [Range(0.1f, 5)]
+        public float waitTime;
+
+        public override void Start()
         {
+            base.Start();
+            player = GameObject.FindGameObjectWithTag("Player");
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            foreach (GameObject mob in GameObject.FindGameObjectsWithTag("Mob"))
+                if(mob != this)
+                    Physics2D.IgnoreCollision(mob.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+            
+
+
+        }
+
+        void Update()
+        { 
+
+
+
             Vector2 motion = Vector2.zero;
+            if (isAttack || player.GetComponent<Player>().dead)
+            {
+                Move(Vector2.zero);
+                return;
+            }
+            if (Vector2.Distance(player.transform.position, transform.position) < 1)
+            {
+                Move(Vector2.zero);
+                if(!isAttack)
+                    StartCoroutine(WaitAttack());
+                
+                return;
+            }
+
             PathNode playerNode = ground.pathfinding.grid.getNodeFromWorldPosition(player.transform.position);
             PathNode startNode = ground.pathfinding.grid.getNodeFromWorldPosition(transform.position);
             if (playerNode == null || startNode == null) {
@@ -66,8 +103,21 @@ namespace Entities{
             Move(motion);
         }
 
+
+        IEnumerator WaitAttack()
+        {
+            isAttack = true;
+            yield return new WaitForSeconds(0.1f);
+            Attack();
+            yield return new WaitForSeconds(waitTime);
+            isAttack = false;
+        }
+
         protected override void OnDie()
         {
+
+            spawner.Die();
+            StartCoroutine(AfterDie());
         }
 
         protected override void OnMove()
@@ -96,6 +146,12 @@ namespace Entities{
                 return;
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(transform.position, followRadius);
+        }
+
+        IEnumerator AfterDie()
+        {
+            yield return new WaitForSeconds(5);
+            Destroy(this);
         }
     }
 }

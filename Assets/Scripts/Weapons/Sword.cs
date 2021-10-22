@@ -32,8 +32,12 @@ public class Sword : Weapon
     {
         foreach(var entity in entitiesInRange)
         {
-            entity.Hurt(damage);
-            Debug.Log("Attack");
+            if(entity.tag != owner.tag)
+            {
+                entity.Hurt(damage);
+                Debug.Log("Attack");
+            }
+            
         }
     }
 }
