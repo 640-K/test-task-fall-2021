@@ -23,7 +23,7 @@
 
 3️⃣ Run and enjoy the game
 
-### What do you need to do for win?
+## What do you need to do for win?
 
  - Find key 🔑 (You can get like drop from mobs)
  - Kill 1️⃣0️⃣0️⃣ mobs
