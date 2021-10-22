@@ -17,9 +17,11 @@
 
 ## How to run?
 
-1️⃣ Download last release
+1️⃣ Download last [release](https://github.com/640-K/test-task-fall-2021/releases/tag/game)
 
-2️⃣ Run and enjoy the game
+2️⃣ Unzip all filles 
+
+3️⃣ Run and enjoy the game
 
 ### What do you need to do for win?
 
