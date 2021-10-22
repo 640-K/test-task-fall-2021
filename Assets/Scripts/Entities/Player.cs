@@ -11,6 +11,8 @@ namespace Entities
 
         public HealthBar healthBar;
         public Text scoreText;
+        public GameObject uiCanvas;
+        public GameObject pauseCanvas;
 
         public uint score = 0;
 
@@ -27,7 +29,27 @@ namespace Entities
             }
         }
 
-        // Update is called once per frame
+        public void stopGame()
+        {
+            Time.timeScale = 0;
+            pauseCanvas.SetActive(true);
+            uiCanvas.SetActive(false);
+        }
+
+        public void resumeGame()
+        {
+            Time.timeScale = 1;
+            pauseCanvas.SetActive(false);
+            uiCanvas.SetActive(true);
+        }
+
+
+        public override void Start()
+        {
+            base.Start();
+            pauseCanvas.SetActive(false);
+        }
+
         void Update()
         {
             if (Input.GetButtonDown("Fire1"))
@@ -48,6 +70,14 @@ namespace Entities
                 motion -= Vector2.up;
             if (Input.GetKey(KeyCode.D))
                 motion += Vector2.right;
+
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                if (Time.timeScale == 1)
+                    stopGame();
+                else
+                    resumeGame();
+            }
 
             Move(motion);
         }
